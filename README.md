@@ -15,7 +15,7 @@ Desenvolvimento da página inicial do Robotrom 2000. O projeto foi desenvolvido 
 - DOM (Document Object Model): interface e linguagem neutra que permite que o documento HTML seja atualizado dinamicamente;
 - Para ler o HTML o navegador o transforma em um objeto manipulável e que possui estrutura do JS;
 - Diferenças entre função anônima, função declarada e função de seta;
-- Hoisting: permite execução de funções asntes das suas declarações;
+- Hoisting: permite execução de funções antes das suas declarações;
 - Propriedades do JS:`.addEventListener(ação, função)` , `parseInt` , `.value` , `document.querySelectorAll()` , `.forEach()` ,  `textContent` , `.target` , `.splice (posição, quantidade)` , `.parentNode` , `data-attributes` , `.dataset` , `this` , `window` , entre outras propriedades.
 
 ## **Funcionalidades**
