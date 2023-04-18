@@ -34,7 +34,7 @@ Ou
 ```
 git clone https://github.com/Gabriel-Dupla/robotron-2000.git
 ```
-2. Localizar e abrir a pasta *robo*
+2. Localizar e abrir a pasta *robotron-2000*
 
 ```
 cd robotron-2000
