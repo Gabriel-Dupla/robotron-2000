@@ -37,38 +37,54 @@ const pecas = {
 }
 
 controle.forEach( (elemento) => {
-    elemento.addEventListener("click", (evento) => {
+    elemento.addEventListener('click', (evento) => {
+        atualizaEstatistica(evento.target.dataset.peca, evento.target.dataset.controle)
         manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
-        atualizaEstatisticas(evento.target.dataset.peca, evento.target.dataset.controle); //parametros
 
     })
-
 })
 
-function manipulaDados (operacao, controle) {
-    const peca = controle.querySelector("[data-contador]");
-    
-    if (operacao === "-") {
-        peca.value = parseInt(peca.value) - 1;
+function manipulaDados(operacao, controle) {
+    const peca = controle.querySelector('[data-contador]');
 
-    } else {
+
+    if(operacao === '-') {
+        if (peca.value === '0'){
+
+        }else{
+            peca.value = parseInt(peca.value) - 1;
+        }
+
+    }else {
         peca.value = parseInt(peca.value) + 1;
-
     }
 }
 
-function atualizaEstatisticas(peca, operacao) {
-    if (operacao === "+") {
-      estatisticas.forEach((elemento) => {
-        elemento.textContent =
-          parseInt(elemento.textContent) +
-          pecas[peca][elemento.dataset.estatistica];
-      });
-    } else {
-      estatisticas.forEach((elemento) => {
-        elemento.textContent =
-          parseInt(elemento.textContent) -
-          pecas[peca][elemento.dataset.estatistica];
-      });
-    }
-}  
+function atualizaEstatistica(peca, operacao) {
+    const contador = document.querySelector('[data-contador]');
+
+    estatisticas.forEach( (elemento) => {
+        if (operacao === '-'){
+            if(contador.value === '0'){
+
+            }else{
+                elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
+            }
+        }else{
+            elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
+        }
+    })
+}
+
+//Variáveis para coletar informações do html
+const coresRobo = document.querySelectorAll("[data-cores]")
+const robo = document.querySelector("[data-robo]")
+
+//
+coresRobo.forEach((elemento) => {
+    elemento.addEventListener("click", (evento) => {
+        evento.preventDefault();
+        robo.src = `img/Robotron 2000 - ${elemento.dataset.cores}.png`;
+    });
+
+});
